@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="onSearch(search)">
-    <label><strong>NEWS:</strong></label>
+    <label>Topic:</label>
     <input v-model="search" onSearch="this.value=''" placeholder="Land And Water Conservation Fund"/>
     <button type="submit">SEARCH</button>
   </form>
@@ -24,8 +24,29 @@ export default {
 
 <style>
 form {
-  display: flex;
-  justify-content: center;
-  margin-top: 20%;
+  margin-top: 5%;
+}
+
+input {
+  padding: 10px;
+  min-width: 200px;
+}
+
+label {
+  padding-right: 10px;
+  font-size: 1.5em;
+  font-family: Arial, sans-serif;
+  color: grey;
+}
+
+button {
+  margin: 10px;
+  background-color: darkgoldenrod;
+  color: #fff;
+  font-size: 1em;
+}
+
+button:active {
+  color: blue;
 }
 </style>

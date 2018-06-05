@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Hello! I'm App</h1>
+    <h1>News Coverage Search</h1>
     <Loading :loading="loading"/>
     <SearchControl :onSearch="handleSearch"/>
     <NewsList :news="news"/>
@@ -46,9 +46,9 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: darkolivegreen;
+  margin-top: 40px;
 }
 </style>
