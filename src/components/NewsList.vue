@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="results">
     <ul>
       <news 
         v-for="news in news"
@@ -21,5 +21,11 @@ export default {
 };
 </script>
 <style>
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
 </style>
