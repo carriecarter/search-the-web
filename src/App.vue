@@ -1,14 +1,17 @@
 <template>
   <div id="app">
     <h1>Hello! I'm App</h1>
-    <CampgroundList :campground="campground"/>
+    <Loading :loading="loading"/>
+    <SearchControl :onSearch="handleSearch"/>
+    <NewsList :news="news"/>
   </div>
 </template>
 
 <script>
-import CampgroundList from './components/CampgroundList';
-import Campground from './components/Campground';
-import { getCampground } from './services/api';
+import SearchControl from './components/SearchControl';
+import NewsList from './components/NewsList';
+import Loading from './components/Loading';
+import { getNews } from './services/api';
 
 // eslint-disable-next-line
 console.log(process.env.VUE_APP_API_KEY);
@@ -16,22 +19,27 @@ console.log(process.env.VUE_APP_API_KEY);
 export default {
   data() {
     return {
-      name: null,
-
+      news: null,
+      loading: false
     };
   },
 
   components: {
-    CampgroundList,
-    Campground,
+    NewsList,
+    SearchControl,
+    Loading
   },
 
-  methods: 
-    getCampground(name).then(data => {
-      this.name = data.data;
-      this.loading = false;
-    }),
-  
+  methods: {
+    handleSearch(keyword) {
+      this.loading = true;
+
+      getNews(keyword).then(data => {
+        this.news = data.articles;
+        this.loading = false;
+      });
+    }
+  }  
 };
 
 </script>

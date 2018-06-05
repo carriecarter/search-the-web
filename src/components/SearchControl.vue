@@ -1,15 +1,17 @@
 <template>
   <form @submit.prevent="onSearch(search)">
-    <label>Campground:</label>
-    <input v-model="search"/>
-    <button type="submit">Search</button>
+    <label><strong>NEWS:</strong></label>
+    <input v-model="search" onSearch="this.value=''" placeholder="Land And Water Conservation Fund"/>
+    <button type="submit">SEARCH</button>
   </form>
 </template>
 
 <script>
 export default {
   data() {
-    return { search: '' };
+    return {
+      search: ''
+    };
   },
   props: {
     onSearch: {
@@ -19,3 +21,11 @@ export default {
   }
 };
 </script>
+
+<style>
+form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+}
+</style>
