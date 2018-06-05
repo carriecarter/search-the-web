@@ -31,10 +31,10 @@ export default {
   },
 
   methods: {
-    handleSearch(keyword) {
+    handleSearch(topic) {
       this.loading = true;
 
-      getNews(keyword).then(data => {
+      getNews(topic).then(data => {
         this.news = data.articles;
         this.loading = false;
       });
