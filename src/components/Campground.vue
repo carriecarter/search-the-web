@@ -1,15 +1,18 @@
 <template>
+ <ul>
   <li>
-    <h3>{{name}}</h3>
-    <p>{{description}}</p>
-    <p>{{toilets}}</p>
+    <h3>{{campground.name}}</h3>
   </li>
+ </ul> 
 </template>
 
 <script>
+
 export default {
-  props: ['name', 'description']
+  props: ['name']
 };
+
+
 </script>
 
 

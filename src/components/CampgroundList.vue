@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h2>PNW National Park Campgrounds</h2>
+    <h2>CampgroundList</h2>
     <ul>
-      <Campground
-        v-for="name in campground"
+      <name 
+        v-for="name in data"
         :key="name"
-        :campground="campground"
+        :campgroundName="name"
       />
     </ul>
   </div>
@@ -13,10 +13,18 @@
 
 <script>
 import Campground from './Campground';
+
 export default {
-  props: ['name', 'description'],
+  props: ['name'],
   components: {
     Campground
   }
 };
+
 </script>
+
+<style>
+
+
+
+</style>

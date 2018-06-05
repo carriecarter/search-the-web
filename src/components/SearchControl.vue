@@ -1,6 +1,6 @@
 <template>
-  <form @submit.prevent="getPark(campgrounds)">
-    <label>State:</label>
+  <form @submit.prevent="onSearch(search)">
+    <label>Campground:</label>
     <input v-model="search"/>
     <button type="submit">Search</button>
   </form>

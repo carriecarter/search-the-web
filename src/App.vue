@@ -1,21 +1,39 @@
 <template>
   <div id="app">
     <h1>Hello! I'm App</h1>
-    <Loading :loading="loading"/>
-    <SearchControl :onSearch="handleSearch"/>
     <CampgroundList :campground="campground"/>
   </div>
 </template>
 
 <script>
-import CampgroundList from './components/CampgroundList.vue';
+import CampgroundList from './components/CampgroundList';
+import Campground from './components/Campground';
+import { getCampground } from './services/api';
+
+// eslint-disable-next-line
+console.log(process.env.VUE_APP_API_KEY);
 
 export default {
-  name: 'app',
+  data() {
+    return {
+      name: null,
+
+    };
+  },
+
   components: {
-    CampgroundList
-  }
+    CampgroundList,
+    Campground,
+  },
+
+  methods: 
+    getCampground(name).then(data => {
+      this.name = data.data;
+      this.loading = false;
+    }),
+  
 };
+
 </script>
 
 <style>
